@@ -29,8 +29,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'scrooloose/nerdtree.git'
-"  Plugin 'vim-latex/vim-latex'
-  Plugin 'lervag/vimtex'
+  Plugin 'vim-latex/vim-latex'
+"  Plugin 'lervag/vimtex' "(alternative LaTeX plugin)
   Plugin 'itchyny/calendar.vim'
   Plugin 'aaronbieber/vim-quicktask.git'
   Plugin 'vim-ruby/vim-ruby'
