@@ -29,7 +29,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'scrooloose/nerdtree.git'
-  Plugin 'vim-latex/vim-latex'
+"  Plugin 'vim-latex/vim-latex'
+  Plugin 'lervag/vimtex'
   Plugin 'itchyny/calendar.vim'
   Plugin 'aaronbieber/vim-quicktask.git'
   Plugin 'vim-ruby/vim-ruby'
@@ -156,7 +157,7 @@ let g:calendar_google_task = 1
 
 
 
-" from githb./com/Integralist/ProVim.git
+" from github.com/Integralist/ProVim.git
 " Change colourscheme when diffing
 fun! SetDiffColors()
   highlight DiffAdd    cterm=bold ctermfg=white ctermbg=DarkGreen
