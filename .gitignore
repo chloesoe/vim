@@ -1,5 +1,2 @@
-temp/vim_backup/*
-temp/vim_undo/*
-temp/vim_swap/*
 bundle/*
 !bundle/Vundle.vim
