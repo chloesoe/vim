@@ -1,0 +1,34 @@
+# pack-refs with: peeled fully-peeled 
+d0925613b502b4fe1c53dfd29e6e1ecfa7a18dba refs/remotes/origin/0.10.3
+5d2a24f27e3662be9fbe21b0a46c8ab00ff2eac5 refs/remotes/origin/BundleMake
+879b0473c4360843a2744461b84402ec96be174b refs/remotes/origin/bug/rtp_order_reloaded
+b49939a9512e0e52d7a39f61376c704265b44ff6 refs/remotes/origin/doc-fixes
+1df405ed6572449e631e457c75f979cc3db4f365 refs/remotes/origin/events
+f4bdf4388d0e5aa848bef4d3bffdfc3058a951dd refs/remotes/origin/fix-potential-mitm-vulnerability
+0433214877f649e8c8a8f4f2016d71ec11bc54e4 refs/remotes/origin/gh-pages
+f63cfafa7a74cf6dd45b5d829e6619a33af003da refs/remotes/origin/github-search
+3dcb0c32991026d0d226aaad57b622c6553cd0db refs/remotes/origin/issue-112
+6497e37694cd2134ccc3e2526818447ee8f20f92 refs/remotes/origin/master
+8dcb614eda34e110e757fc79a32b7462b0b45b70 refs/remotes/origin/name_collision
+8db3bcb5921103f0eb6de361c8b25cc03cb350b5 refs/remotes/origin/next
+5b0bb1375d324864715e3f6e5d4454b43abe0ebb refs/remotes/origin/rc
+43b42277486c63970fdf1baeba56dd24caa255b3 refs/remotes/origin/readme_changes
+a54680251b71513b6ea919cfeeb35ec97d769f22 refs/remotes/origin/revert-616-fix-github-url
+279668e0228ba86ed0673ff892926431c62c4559 refs/remotes/origin/v
+a108fe817f8f0a11b9b48346d831c6abc041ffcb refs/tags/0.2
+^8dfbd77c2326134c6e3943b5803dc0a7118776b3
+1a9a26d7d53f40cfb06ec7b0e3f00a685235e0b3 refs/tags/0.5
+^dcc6443d30816a46d37b518c93279ef87ea4d5d0
+5fbfb1aaedeee7820938cd8ecbabae2e1dbfdec2 refs/tags/0.7
+^352181553fa584dfa9c1c93940b57d3f7f1f5d94
+eb656297099ab6eec7b1cffe3019065a1b0e6070 refs/tags/0.7.1
+^9dcdbf16c6a0a0c9e4e85c3564d84a49824e535f
+0bbcd0aa0667031f6bb91b06f2b0b7b4a8cb55d9 refs/tags/0.8
+^32c5ae479ef0ac7d9061442d47569c5f2578ac56
+51caa860f022eeb9585cd21f84cd57034787e843 refs/tags/0.9
+^793ee8a91ec548e71d0a70cb4c3889891f42805a
+fb78ab78c4569bbb3313c5dbe6d2449103e07c75 refs/tags/0.9.1
+^47ab21f76da3fa90c840de5142693fa1d673a6a5
+526d390854f14bc5886ca0606b3be51f7379eacb refs/tags/v0.10
+a97e88917ccfc36f93acae518e49e0f0240e7445 refs/tags/v0.10.1
+8db3bcb5921103f0eb6de361c8b25cc03cb350b5 refs/tags/v0.10.2

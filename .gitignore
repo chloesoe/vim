@@ -1,0 +1,3 @@
+temp/*
+bundle/*
+!bundle/Vundle.vim
