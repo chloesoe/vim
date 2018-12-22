@@ -3,7 +3,8 @@ if has('gui_running')
     set columns=120
     set lines=42
 else
-    colorscheme industry
+    "colorscheme industry
+    colorscheme evening
 endif
 set laststatus=2
 
@@ -32,7 +33,7 @@ call vundle#begin()
   Plugin 'vim-latex/vim-latex'
 "  Plugin 'lervag/vimtex' "(alternative LaTeX plugin)
   Plugin 'itchyny/calendar.vim'
-  Plugin 'aaronbieber/vim-quicktask.git'
+"  Plugin 'aaronbieber/vim-quicktask.git'
   Plugin 'vim-ruby/vim-ruby'
   Plugin 'ekalinin/Dockerfile.vim.git'
   Plugin 'tmhedberg/matchit'
@@ -40,6 +41,7 @@ call vundle#begin()
   Plugin 'freitass/todo.txt-vim'
   Plugin 'fidian/hexmode'
   Plugin 'lilydjwg/colorizer'
+  Plugin 'mrtazz/simplenote.vim'
 call vundle#end()
 filetype plugin indent on
 "end Vundle settings
@@ -98,7 +100,7 @@ command W w !sudo tee % > /dev/null
 
 "Abschnitt Rechtschreibung Start
        "Deutsche Rechtschreibung mit F7 starten
-       map <S-F7> :setlocal spell! spelllang=de_ch <return>
+       map <S-F7> :setlocal spell spelllang=de_ch <return>
        "Englische Rechtschreibung mit Shift+F7 starten
        map <C-F7>  :setlocal spell spelllang=en_gb <return>
        "zum nÃ¤chsten Fehler springen mit F7
@@ -107,7 +109,7 @@ command W w !sudo tee % > /dev/null
        map <S-F8> [s
        "VerbesserungsvorschlÃ¤ge anzeigen mit F
        map <F9> z=
-       "nächster/vorheriger Spellchekc
+       "nächster/vorheriger Spellcheck
        map <F3>  ]s
        map <S-F3> [s
        "übernehmen
@@ -173,3 +175,7 @@ let NERDTreeShowHidden=1
 " copy and paste from clipboard
 vmap <leader>y "*y
 nmap <leader>p "*p
+
+"Simplenote settings
+source ~/.simplenote/credentials.vim
+let g:SimplenoteVertical=1
