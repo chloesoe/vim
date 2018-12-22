@@ -1,3 +1,5 @@
+
+"set defualt colorscheme if GVim is running
 if has('gui_running')
     colorscheme peachpuff
     set columns=120
@@ -6,23 +8,43 @@ else
     "colorscheme industry
     colorscheme evening
 endif
-set laststatus=2
 
-set nowrap
-set linebreak
-set incsearch
-set hlsearch
-set incsearch
-set mousemodel=popup   "context menu in GVim
-
+"set some defaults
 syntax on
+set laststatus=2        "statusline at the bottom of Vim
+set nowrap              "no line wrap by default
+set linebreak           "if text is wrapped, then wrap whole words
+set incsearch           "incremental search
+set hlsearch            "hilight search
+set mousemodel=popup    "context menu in GVim
+set nocompatible
+set history=100
+set showcmd
+set statusline=%f%m\ %=L:%l/%L\ %c\ (%p%%)
+set showmatch           "show matchin bracket
+set list listchars=tab:\ \ ,trail:·     "show space at last line
+set shortmess+=I        " Don't show welcome screen
+set guioptions-=T       " Hide the toolbar
+set backup
+set backupdir^=~/.vim/temp/vim_backup "put all backup files files together in one place
+set directory^=~/.vim/temp/vim_swap   "put all swap files together in one place
+set undofile
+set undodir=~/.vim/temp/vim_undo
+set shiftwidth=4
+set softtabstop=4
+set fileformats=unix,dos
+
+
+" Close all folds when opening a new buffer
+autocmd BufRead * setlocal foldmethod=marker
+autocmd BufRead * normal zM
+
 
 "mapleader comma, standard is backslash and on DE-CH keyboards not easy to
 "type. Mapleader is used e.g. for LaTeX to generate the pdf with <mapleader>ll
 let mapleader=','
 let maplocalleader=','
 
-set nocompatible 
 
 "Vundle settings, dhw 17. Apr 2017, see https://github.com/VundleVim/Vundle.vim
 filetype off
@@ -46,37 +68,10 @@ call vundle#end()
 filetype plugin indent on
 "end Vundle settings
 
-"from ProVim
-    set history=100
-    set showcmd
-    " Set the status line to something useful
-    set statusline=%f%m\ %=L:%l/%L\ %c\ (%p%%)
-    set showmatch
-    set list listchars=tab:\ \ ,trail:·
-    " Don't show welcome screen
-    set shortmess+=I
-    " Hide the toolbar
-    set guioptions-=T
-    " Close all folds when opening a new buffer
-    autocmd BufRead * setlocal foldmethod=marker
-    autocmd BufRead * normal zM
-"end from ProVim
-
 "remember last position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
-
-set backup
-set backupdir^=~/.vim/temp/vim_backup "put all backup files files together in one place
-set directory^=~/.vim/temp/vim_swap   "put all swap files together in one place
-set undofile
-set undodir=~/.vim/temp/vim_undo
-
-set shiftwidth=4
-set softtabstop=4
-set fileformats=unix,dos
-
 
 if has('modifiable')
 	au BufRead,BufNewFile  *.txt    set textwidth=80 | set expandtab | set softtabstop=4 | set fileformat=dos
@@ -94,8 +89,7 @@ set printdevice=BrotherLAN
 "set guifont=CourierNew\ 10
 set guifont=Monospace\ Regular\ 10
 
-
-map <c-tab> <c-w>w
+"with uppercase W save file with sudo
 command W w !sudo tee % > /dev/null
 
 "Abschnitt Rechtschreibung Start
@@ -157,8 +151,6 @@ let g:calendar_monday = 1
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
-
-
 " from github.com/Integralist/ProVim.git
 " Change colourscheme when diffing
 fun! SetDiffColors()
@@ -172,10 +164,7 @@ autocmd FilterWritePre * call SetDiffColors()
 
 let NERDTreeShowHidden=1
 
-" copy and paste from clipboard
-vmap <leader>y "*y
-nmap <leader>p "*p
-
+"
 "Simplenote settings
 source ~/.simplenote/credentials.vim
 let g:SimplenoteVertical=1
