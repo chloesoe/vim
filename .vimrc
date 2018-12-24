@@ -8,6 +8,13 @@ if has('gui_running')
     set lines=82
     "map ctrl-tab to switch splits in terminal mode
     nmap <silent> <C-Tab> :wincmd w<CR>
+    if has('unix')
+        "open fullscreen on linux
+        autocmd GUIEnter * call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
+    elseif has('win32')
+        "open fullscreen on windows
+        au GUIEnter * simalt ~x
+    endif
 else
     "colorscheme industry
     colorscheme evening
@@ -57,32 +64,32 @@ let maplocalleader=','
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim'
-  Plugin 'scrooloose/nerdtree.git'
-  Plugin 'Xuyuanp/nerdtree-git-plugin'
-  Plugin 'vim-latex/vim-latex'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'vim-latex/vim-latex'
 "  Plugin 'lervag/vimtex' "(alternative LaTeX plugin)
-  Plugin 'itchyny/calendar.vim'
+Plugin 'itchyny/calendar.vim'
 "  Plugin 'aaronbieber/vim-quicktask.git'
-  Plugin 'vim-ruby/vim-ruby'
-  Plugin 'ekalinin/Dockerfile.vim.git'
-  Plugin 'tmhedberg/matchit'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'freitass/todo.txt-vim'
-  Plugin 'fidian/hexmode'
-  Plugin 'lilydjwg/colorizer'
-  Plugin 'mrtazz/simplenote.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ekalinin/Dockerfile.vim.git'
+Plugin 'tmhedberg/matchit'
+Plugin 'tpope/vim-fugitive'
+Plugin 'freitass/todo.txt-vim'
+Plugin 'fidian/hexmode'
+Plugin 'lilydjwg/colorizer'
+Plugin 'mrtazz/simplenote.vim'
 call vundle#end()
 filetype plugin indent on
 "end Vundle settings
 
 "remember last position
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
 
 if has('modifiable')
-	au BufRead,BufNewFile  *.txt    set textwidth=80 | set expandtab | set softtabstop=4 | set fileformat=dos
+    au BufRead,BufNewFile  *.txt    set textwidth=80 | set expandtab | set softtabstop=4 | set fileformat=dos
 endif
 
 au FileType	       vim	set expandtab | set number
@@ -101,21 +108,21 @@ set guifont=Monospace\ Regular\ 10
 command W w !sudo tee % > /dev/null
 
 "Abschnitt Rechtschreibung Start
-       "Deutsche Rechtschreibung mit F7 starten
-       map <S-F7> :setlocal spell spelllang=de_ch <return>
-       "Englische Rechtschreibung mit Shift+F7 starten
-       map <C-F7>  :setlocal spell spelllang=en_gb <return>
-       "zum nÃ¤chsten Fehler springen mit F7
-       map <F8> ]s
-       "zum vorherigen Fehler springen mit Shift-F7
-       map <S-F8> [s
-       "Verbesserungsvorschläge anzeigen mit F
-       map <F9> z=
-       "nächster/vorheriger Spellcheck
-       map <F3>  ]s
-       map <S-F3> [s
-       "übernehmen
-       map <F4>  z=
+"Deutsche Rechtschreibung mit F7 starten
+map <S-F7> :setlocal spell spelllang=de_ch <return>
+"Englische Rechtschreibung mit Shift+F7 starten
+map <C-F7>  :setlocal spell spelllang=en_gb <return>
+"zum nächsten Fehler springen mit F7
+map <F8> ]s
+"zum vorherigen Fehler springen mit Shift-F7
+map <S-F8> [s
+"Verbesserungsvorschläge anzeigen mit F
+map <F9> z=
+"nächster/vorheriger Spellcheck
+map <F3>  ]s
+map <S-F3> [s
+"übernehmen
+map <F4>  z=
 "Abschintt Rechtschreibung Ende
 
 
@@ -152,20 +159,20 @@ endif
 "calendar.vim definitionen
 let g:calendar_monday = 1
 " Deutsche Monate und Wochentage (auskommentieren wenn Englische gewünscht)
-       let g:calendar_mruler = 'Jan,Feb,Mär,Apr,Mai,Jun,Jul,Aug,Sep,Okt,Nov,Dez'
-       let g:calendar_wruler = 'So Mo Di Mi Do Fr Sa'
-       let g:calendar_mark = 'right'
-       let g:calendar_weeknm = 3 " KW01
+let g:calendar_mruler = 'Jan,Feb,Mär,Apr,Mai,Jun,Jul,Aug,Sep,Okt,Nov,Dez'
+let g:calendar_wruler = 'So Mo Di Mi Do Fr Sa'
+let g:calendar_mark = 'right'
+let g:calendar_weeknm = 3 " KW01
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " from github.com/Integralist/ProVim.git
 " Change colourscheme when diffing
 fun! SetDiffColors()
-  highlight DiffAdd    cterm=bold ctermfg=white ctermbg=DarkGreen
-  highlight DiffDelete cterm=bold ctermfg=white ctermbg=DarkGrey
-  highlight DiffChange cterm=bold ctermfg=white ctermbg=DarkBlue
-  highlight DiffText   cterm=bold ctermfg=white ctermbg=DarkRed
+    highlight DiffAdd    cterm=bold ctermfg=white ctermbg=DarkGreen
+    highlight DiffDelete cterm=bold ctermfg=white ctermbg=DarkGrey
+    highlight DiffChange cterm=bold ctermfg=white ctermbg=DarkBlue
+    highlight DiffText   cterm=bold ctermfg=white ctermbg=DarkRed
 endfun
 autocmd FilterWritePre * call SetDiffColors()
 
@@ -178,6 +185,7 @@ map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI = 1
 autocmd VimEnter * NERDTree         "start NERDTree on startup
 autocmd VimEnter * wincmd p         "Jump to the main window.
 
