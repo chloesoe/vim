@@ -82,7 +82,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-latex/vim-latex'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ekalinin/Dockerfile.vim.git'
@@ -92,10 +91,11 @@ Plugin 'fidian/hexmode'
 Plugin 'lilydjwg/colorizer'
 Plugin 'mrtazz/simplenote.vim'
 Plugin 'jlanzarotta/bufexplorer'
-"
+
 "Git support
 Plugin 'tpope/vim-fugitive'
 Plugin 'kablamo/vim-git-log'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 call vundle#end()
 filetype plugin indent on
