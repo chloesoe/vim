@@ -22,7 +22,7 @@ else
     "colorscheme industry
     colorscheme evening
     "map tab to switch splits in terminal mode
-    nmap <silent> <Tab> :wincmd w<CR>   
+    nmap <silent> <Tab> :wincmd w<CR>
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -190,7 +190,7 @@ autocmd FilterWritePre * call SetDiffColors()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos="right"
 let g:NERDTreeWinSize=50
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
