@@ -1,9 +1,11 @@
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" .vimrc by @chloesoe
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set defualt colorscheme if GVim is running
 if has('gui_running')
     colorscheme peachpuff
-    set columns=120
-    set lines=42
+    set columns=180
+    set lines=82
 else
     "colorscheme industry
     colorscheme evening
@@ -52,6 +54,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'scrooloose/nerdtree.git'
+  Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'vim-latex/vim-latex'
 "  Plugin 'lervag/vimtex' "(alternative LaTeX plugin)
   Plugin 'itchyny/calendar.vim'
@@ -101,7 +104,7 @@ command W w !sudo tee % > /dev/null
        map <F8> ]s
        "zum vorherigen Fehler springen mit Shift-F7
        map <S-F8> [s
-       "VerbesserungsvorschlÃ¤ge anzeigen mit F
+       "Verbesserungsvorschläge anzeigen mit F
        map <F9> z=
        "nächster/vorheriger Spellcheck
        map <F3>  ]s
@@ -161,10 +164,19 @@ fun! SetDiffColors()
 endfun
 autocmd FilterWritePre * call SetDiffColors()
 
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Nerd Tree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinSize=50
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark 
+map <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
+autocmd VimEnter * NERDTree         "start NERDTree on startup
+autocmd VimEnter * wincmd p         "Jump to the main window.
 
-"
+
 "Simplenote settings
 source ~/.simplenote/credentials.vim
 let g:SimplenoteVertical=1
