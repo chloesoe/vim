@@ -90,7 +90,7 @@ Plugin 'fidian/hexmode'
 Plugin 'lilydjwg/colorizer'
 Plugin 'mrtazz/simplenote.vim'
 Plugin 'jlanzarotta/bufexplorer'
-"
+
 "Docker support
 Plugin 'ekalinin/Dockerfile.vim.git'
 Plugin 'tpope/vim-dotenv'
