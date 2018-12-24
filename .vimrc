@@ -6,9 +6,13 @@ if has('gui_running')
     colorscheme peachpuff
     set columns=180
     set lines=82
+    "map ctrl-tab to switch splits in terminal mode
+    nmap <silent> <C-Tab> :wincmd w<CR>
 else
     "colorscheme industry
     colorscheme evening
+    "map tab to switch splits in terminal mode
+    nmap <silent> <Tab> :wincmd w<CR>   
 endif
 
 "set some defaults
@@ -35,6 +39,7 @@ set undodir=~/.vim/temp/vim_undo
 set shiftwidth=4
 set softtabstop=4
 set fileformats=unix,dos
+
 
 
 " Close all folds when opening a new buffer
@@ -111,7 +116,7 @@ command W w !sudo tee % > /dev/null
        map <S-F3> [s
        "übernehmen
        map <F4>  z=
-"Abschntt Rechtschreibung Ende
+"Abschintt Rechtschreibung Ende
 
 
 " LaTeX Wörter und Zeichen in einem Range zählen
