@@ -95,7 +95,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'ekalinin/Dockerfile.vim.git'
 Plugin 'tpope/vim-dotenv'
 Plugin 'stephpy/vim-yaml'
-Plugin 'docker/docker'
+Plugin 'kevinhui/vim-docker-tools'
 
 "Git support
 Plugin 'tpope/vim-fugitive'
