@@ -84,13 +84,18 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'vim-latex/vim-latex'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'ekalinin/Dockerfile.vim.git'
 Plugin 'tmhedberg/matchit'
 Plugin 'freitass/todo.txt-vim'
 Plugin 'fidian/hexmode'
 Plugin 'lilydjwg/colorizer'
 Plugin 'mrtazz/simplenote.vim'
 Plugin 'jlanzarotta/bufexplorer'
+"
+"Docker support
+Plugin 'ekalinin/Dockerfile.vim.git'
+Plugin 'tpope/vim-dotenv'
+Plugin 'stephpy/vim-yaml'
+Plugin 'docker/docker'
 
 "Git support
 Plugin 'tpope/vim-fugitive'
