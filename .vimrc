@@ -79,6 +79,12 @@ Plugin 'freitass/todo.txt-vim'
 Plugin 'fidian/hexmode'
 Plugin 'lilydjwg/colorizer'
 Plugin 'mrtazz/simplenote.vim'
+Plugin 'jlanzarotta/bufexplorer'
+
+"Git supportt
+Plugin 'tpope/vim-fugitive'
+Plugin 'kablamo/vim-git-log'
+
 call vundle#end()
 filetype plugin indent on
 "end Vundle settings
