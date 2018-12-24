@@ -212,6 +212,7 @@ map <leader>nb :NERDTreeFromBookmark
 map <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
+let g:NERDTreeShowIgnoredStatus = 1
 autocmd VimEnter * NERDTree         "start NERDTree on startup
 autocmd VimEnter * wincmd p         "Jump to the main window.
 
