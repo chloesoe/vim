@@ -97,6 +97,16 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'kablamo/vim-git-log'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+" Generic Programming Support (recommended by https://coderoncode.com/tools/2017/04/16/vim-the-perfect-ide.html)
+Plugin 'vim-syntastic/syntastic'
+Plugin 'Townk/vim-autoclose'
+"
+" Markdown / Writting
+Plugin 'reedes/vim-pencil'
+Plugin 'tpope/vim-markdown'
+Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'LanguageTool'
+
 call vundle#end()
 filetype plugin indent on
 "end Vundle settings
