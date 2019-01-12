@@ -7,8 +7,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('gui_running')
     colorscheme peachpuff
-    set columns=180
-    set lines=82
     "map ctrl-tab to switch splits in terminal mode
     nmap <silent> <C-Tab> :wincmd w<CR>
     if has('unix')
@@ -18,9 +16,11 @@ if has('gui_running')
         "open fullscreen on windows
         au GUIEnter * simalt ~x
     endif
+"    set columns=180
+"    set lines=82
 else
-    "colorscheme industry
-    colorscheme evening
+    colorscheme industry
+    "colorscheme evening
     "map tab to switch splits in terminal mode
     nmap <silent> <Tab> :wincmd w<CR>
 endif
@@ -36,7 +36,7 @@ set incsearch           "incremental search
 set hlsearch            "hilight search
 set mousemodel=popup    "context menu in GVim
 set nocompatible
-set history=100
+set history=1000
 set showcmd
 set statusline=%f%m\ %=L:%l/%L\ %c\ (%p%%)
 set showmatch           "show matchin bracket
@@ -210,12 +210,13 @@ let g:NERDTreeWinSize=50
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden=0
 let NERDTreeMinimalUI = 1
 let g:NERDTreeShowIgnoredStatus = 1
 autocmd VimEnter * NERDTree         "start NERDTree on startup
 autocmd VimEnter * wincmd p         "Jump to the main window.
-
+"auto change dir to the directory used in nerdtree
+autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Simplenote settings
