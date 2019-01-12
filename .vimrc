@@ -185,7 +185,9 @@ if has('gui_running')
     filetype indent on
     let g:tex_flavor='latex'
     "logs output to log file: http://tex.stackexchange.com/questions/341243/vimlatex-compilation-output-in-sub-folder-and-quickfix-window
-    let g:Tex_CompileRule_pdf="mkdir -p log; pdflatex -interaction=nonstopmode -output-directory=log $*; mv log/*.pdf $PWD"
+    let g:Tex_CompileRule_pdf="mkdir -p log;"
+                \. "pdflatex -interaction=nonstopmode -output-directory=log $*;" 
+                \. "mv log/*.pdf ."
     "let g:Tex_CompileRule_pdf="mkdir -p ~/tmp/latexlog; pdflatex -interaction=nonstopmode -output-directory=/home/dhw/tmp/latexlog $*; mv /home/dhw/tmp/latexlog/*.pdf $PWD"
 endif
 
