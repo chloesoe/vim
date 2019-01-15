@@ -112,6 +112,13 @@ Plugin 'tpope/vim-markdown'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'LanguageTool'
 
+" Cloud Formation Templates AWS
+Plugin 'm-kat/aws-vim'
+
+"open a Scratch buffer:wq
+Plugin 'mtth/scratch.vim'
+
+
 call vundle#end()
 filetype plugin indent on
 "end Vundle settings
@@ -133,7 +140,7 @@ if has('modifiable')
 endif
 
 au FileType	       vim	set expandtab | set number
-au FileType            tex      set expandtab | set softtabstop=4 | set autoindent | set wrap | set number | set number | set shiftwidth=2 | let g:Tex_DefaultTargetFormat = 'pdf' | TTarget pdf
+au FileType            tex      set textwidth=80 | set expandtab | set softtabstop=4 | set autoindent | set wrap | set number | set number | set shiftwidth=2 | let g:Tex_DefaultTargetFormat = 'pdf' | TTarget pdf
 au BufRead,BufNewFile  *.cal    set expandtab | set softtabstop=4 | set autoindent
 au BufRead,BufNewFile *.htm,*.html,*.css,*.php  set expandtab | set shiftwidth=2 | set number | set autoindent
 
