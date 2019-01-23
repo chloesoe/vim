@@ -227,6 +227,9 @@ autocmd VimEnter * wincmd p         "Jump to the main window.
 "auto change dir to the directory used in nerdtree
 autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
 
+"no NERDTree in Scratch mode
+autocmd VimEnter,BufEnter * if &buftype == "nofile" && &bufhidden == "hide" && &swapfile == 0 | NERDTreeToggle | endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Simplenote settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
