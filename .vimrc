@@ -228,7 +228,7 @@ autocmd VimEnter * wincmd p         "Jump to the main window.
 autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
 
 "no NERDTree in Scratch mode
-autocmd VimEnter,BufEnter * if &buftype == "nofile" && &bufhidden == "hide" && &swapfile == 0 | NERDTreeToggle | endif
+autocmd VimEnter * if &buftype == "nofile" && &bufhidden == "hide" && &swapfile == 0 | NERDTreeToggle | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Simplenote settings
