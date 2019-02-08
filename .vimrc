@@ -140,12 +140,11 @@ if has('modifiable')
 endif
 
 au FileType	       vim	set expandtab | set number
-au FileType            tex      set textwidth=80 | set expandtab | set softtabstop=4 | set autoindent | set wrap | set number | set number | set shiftwidth=2 | let g:Tex_DefaultTargetFormat = 'pdf' | TTarget pdf | set spell | set spelllang=de_ch
+au FileType            tex      set textwidth=80 | set expandtab | set softtabstop=4 |  set spell | set spelllang=de_ch | set autoindent | set wrap | set number | set number | set shiftwidth=2 | let g:Tex_DefaultTargetFormat = 'pdf' | TTarget pdf
 
 au BufRead,BufNewFile  *.cal    set expandtab | set softtabstop=4 | set autoindent
 au BufRead,BufNewFile *.htm,*.html,*.css,*.php  set expandtab | set shiftwidth=2 | set number | set autoindent
 au BufRead,BufNewFile  bibliography.tex     set textwidth=1000
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " spellcheck
