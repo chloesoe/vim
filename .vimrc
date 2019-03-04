@@ -101,6 +101,7 @@ Plugin 'kevinhui/vim-docker-tools'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kablamo/vim-git-log'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'airblade/vim-gitgutter'
 
 " Generic Programming Support (recommended by https://coderoncode.com/tools/2017/04/16/vim-the-perfect-ide.html)
 Plugin 'vim-syntastic/syntastic'
@@ -117,6 +118,9 @@ Plugin 'm-kat/aws-vim'
 
 "open a Scratch buffer:wq
 Plugin 'mtth/scratch.vim'
+
+"syntax check
+Plugin 'w0rp/ale'
 
 
 call vundle#end()
@@ -140,11 +144,11 @@ if has('modifiable')
 endif
 
 au FileType	       vim	set expandtab | set number
-au FileType            tex      set textwidth=80 | set expandtab | set softtabstop=4 |  set spell | set spelllang=de_ch | set autoindent | set wrap | set number | set number | set shiftwidth=2 | let g:Tex_DefaultTargetFormat = 'pdf' | TTarget pdf
+au FileType            tex      set textwidth=80 | set expandtab | set softtabstop=4 |  set spell | set spelllang=de_ch | set autoindent | set nowrap | set number | set number | set shiftwidth=2 | let g:Tex_DefaultTargetFormat = 'pdf' | TTarget pdf
 
 au BufRead,BufNewFile  *.cal    set expandtab | set softtabstop=4 | set autoindent
 au BufRead,BufNewFile *.htm,*.html,*.css,*.php  set expandtab | set shiftwidth=2 | set number | set autoindent
-au BufRead,BufNewFile  bibliography.tex     set textwidth=1000
+au BufWinEnter  bibliography.tex     set textwidth=1000 | set nowrap
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " spellcheck
