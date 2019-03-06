@@ -62,10 +62,10 @@ command W w !sudo tee % > /dev/null
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline=
 set statusline+=%f                          "statusline
-set statusline+=%#MatchParen#               "Color change
-set statusline+=\ %{FugitiveStatusline()}   "show git branch
+set statusline+=%m\                         "modifieable flag
+set statusline+=%#DiffChange#               "Color change
+set statusline+=%{FugitiveStatusline()}     "show git branch
 set statusline+=%#StatusLine#               "Color change
-set statusline+=%m                          "modifieable flag
 set statusline+=%=                          "separator for left/right side
 set statusline+=%#PmenuSel#                 "Color change
 set statusline+=\ L:%l/%L\                  "line number out of lines"
