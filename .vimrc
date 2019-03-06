@@ -269,3 +269,10 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '!'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" mark column 80 and 120 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+highlight ColorColumn ctermbg=235 guibg=#fae3db
+let &colorcolumn="80,120"
+
