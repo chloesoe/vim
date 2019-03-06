@@ -137,6 +137,9 @@ Plugin 'mtth/scratch.vim'
 "syntax check
 Plugin 'w0rp/ale'
 
+"puppet syntax/plugin
+Plugin 'rodjek/vim-puppet'
+
 
 call vundle#end()
 filetype plugin indent on
