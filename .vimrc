@@ -248,8 +248,8 @@ autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
 
 "no NERDTree in Scratch mode
 autocmd VimEnter * if &buftype == "nofile" && &bufhidden == "hide" && &swapfile == 0 | NERDTreeClose | endif
-"no NERDTree when commiting with git
-autocmd VimEnter * if &filetype == 'gitcommit' | NERDTreeClose | endif
+"no NERDTree when commiting with git and tw to 72
+autocmd VimEnter * if &filetype == 'gitcommit' | set tw=72 | NERDTreeClose | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Simplenote settings
