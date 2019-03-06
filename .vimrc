@@ -38,7 +38,6 @@ set mousemodel=popup    "context menu in GVim
 set nocompatible
 set history=1000
 set showcmd
-set statusline=%f%m\ %=L:%l/%L\ %c\ (%p%%)
 set showmatch           "show matchin bracket
 set list listchars=tab:\ \ ,trail:·     "show space at last line
 set shortmess+=I        " Don't show welcome screen
@@ -57,7 +56,23 @@ set guifont=Monospace\ Regular\ 10
 "with uppercase W save file with sudo
 command W w !sudo tee % > /dev/null
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Statusline
+" for color settings go to ```:help CursorLine``` and try and error
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline=
+set statusline+=%f                          "statusline
+set statusline+=%#MatchParen#               "Color change
+set statusline+=\ %{FugitiveStatusline()}   "show git branch
+set statusline+=%#StatusLine#               "Color change
+set statusline+=%m                          "modifieable flag
+set statusline+=%=                          "separator for left/right side
+set statusline+=%#PmenuSel#                 "Color change
+set statusline+=\ L:%l/%L\                  "line number out of lines"
+set statusline+=%#StatusLine#               "Color change
+set statusline+=\ Col:%c\                   "column number
+set statusline+=%#PmenuSel#                 "Color change
+set statusline+=\ (%p%%)                    "percent position
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Close all folds when opening a new buffer
