@@ -158,7 +158,7 @@ endif
 " set defaults for different file types
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('modifiable')
-    au BufRead,BufNewFile  *.txt    set textwidth=80 | set expandtab | set softtabstop=4 | set fileformat=dos
+    au BufRead,BufNewFile  *.txt,*.md    set textwidth=80 | set expandtab | set softtabstop=4 | set fileformat=dos
 endif
 
 au FileType	       vim	set expandtab | set number
