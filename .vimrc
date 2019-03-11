@@ -244,10 +244,12 @@ map <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI = 1
 let g:NERDTreeShowIgnoredStatus = 1
-autocmd VimEnter * NERDTree         "start NERDTree on startup
-autocmd VimEnter * wincmd p         "Jump to the main window.
-"auto change dir to the directory used in nerdtree
-autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
+if has('gui_running')
+   autocmd VimEnter * NERDTree         "start NERDTree on startup
+   autocmd VimEnter * wincmd p         "Jump to the main window.
+   "auto change dir to the directory used in nerdtree
+   autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
+endif
 
 "no NERDTree in Scratch mode
 autocmd VimEnter * if &buftype == "nofile" && &bufhidden == "hide" && &swapfile == 0 | NERDTreeClose | endif
