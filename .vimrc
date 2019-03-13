@@ -140,6 +140,8 @@ Plugin 'w0rp/ale'
 "puppet syntax/plugin
 Plugin 'rodjek/vim-puppet'
 
+"Plugin to show indent spaces on starting line
+Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 filetype plugin indent on
@@ -255,6 +257,12 @@ endif
 autocmd VimEnter * if &buftype == "nofile" && &bufhidden == "hide" && &swapfile == 0 | NERDTreeClose | endif
 "no NERDTree when commiting with git and tw to 72
 autocmd VimEnter * if &filetype == 'gitcommit' | set tw=72 | NERDTreeClose | endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"indentLines settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_leadingSpaceChar='·'
+let g:indentLine_leadingSpaceEnabled='1'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Simplenote settings
