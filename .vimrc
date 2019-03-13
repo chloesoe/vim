@@ -34,11 +34,17 @@ set nowrap              "no line wrap by default
 set linebreak           "if text is wrapped, then wrap whole words
 set incsearch           "incremental search
 set hlsearch            "hilight search
-set mouse=a
+set autoindent
+set smartindent
+set expandtab
+set textwidth=80
+set number
+set relativenumber
+set mouse=a             "use mouse in all modes
 set mousemodel=popup    "context menu in GVim
 set nocompatible
-set history=1000
-set showcmd
+set history=5000
+set showcmd             "show the command you type on bottom right
 set showmatch           "show matchin bracket
 set list listchars=tab:\ \ ,trail:·     "show space at last line
 set shortmess+=I        " Don't show welcome screen
@@ -161,14 +167,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set defaults for different file types
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has('modifiable')
-    au BufRead,BufNewFile  *.txt,*.md    set textwidth=80 | set expandtab | set softtabstop=4 | set fileformat=dos
-endif
-
-au FileType	       vim	set expandtab | set number | set  relativenumber
-au FileType            tex      set textwidth=80 | set expandtab | set softtabstop=4 |  set spell | set spelllang=de_ch | set autoindent | set nowrap | set number | set relativenumber | set shiftwidth=2 | let g:Tex_DefaultTargetFormat = 'pdf' | TTarget pdf
-
-au BufRead,BufNewFile *.htm,*.html,*.css,*.php  set expandtab | set shiftwidth=2 | set number | set autoindent | set  relativenumber
+au filetype            tex      set spell | set spelllang=de_ch | set shiftwidth=2 | let g:tex_defaulttargetformat = 'pdf' | ttarget pdf
+au BufRead,BufNewFile *.htm,*.html,*.css,*.php  set shiftwidth=2
 au BufWinEnter  bibliography.tex     set textwidth=1000 | set nowrap
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
