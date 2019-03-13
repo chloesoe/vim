@@ -34,6 +34,7 @@ set nowrap              "no line wrap by default
 set linebreak           "if text is wrapped, then wrap whole words
 set incsearch           "incremental search
 set hlsearch            "hilight search
+set mouse=a
 set mousemodel=popup    "context menu in GVim
 set nocompatible
 set history=1000
@@ -51,6 +52,7 @@ set shiftwidth=4
 set softtabstop=4
 set fileformats=unix,dos
 set printdevice=BrotherLAN
+set scrolloff=3         "show some lines at the bottom during scrolling
 "set guifont=CourierNew\ 10
 set guifont=Monospace\ Regular\ 10
 "with uppercase W save file with sudo
@@ -255,7 +257,7 @@ endif
 "no NERDTree in Scratch mode
 autocmd VimEnter * if &buftype == "nofile" && &bufhidden == "hide" && &swapfile == 0 | NERDTreeClose | endif
 "no NERDTree when commiting with git and tw to 72
-autocmd VimEnter * if &filetype == 'gitcommit' | set tw=72 | NERDTreeClose | endif
+autocmd VimEnter * if &filetype == 'gitcommit' | set tw=72 | set spell | set spelllang=en_gb | NERDTreeClose | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "indentLines settings
