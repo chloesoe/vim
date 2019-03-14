@@ -262,6 +262,7 @@ autocmd VimEnter * if &filetype == 'gitcommit' | set tw=72 | set spell | set spe
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "indentLines settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_char='·'               "use same char for vertical indent line
 let g:indentLine_leadingSpaceChar='·'
 let g:indentLine_leadingSpaceEnabled='1'
 
