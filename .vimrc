@@ -1,6 +1,7 @@
 "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " .vimrc by @chloesoe
 "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+set nocompatible        "no Vi compatible support
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " settings for Gvim and terminal Vim
@@ -19,8 +20,8 @@ if has('gui_running')
 "    set columns=180
 "    set lines=82
 else
-    colorscheme industry
-    "colorscheme evening
+    "colorscheme industry
+    colorscheme elflord
     "map tab to switch splits in terminal mode
     nmap <silent> <Tab> :wincmd w<CR>
 endif
@@ -40,9 +41,9 @@ set expandtab
 set textwidth=80
 set number
 set relativenumber
+set numberwidth=6       "fixed width for number side pane
 set mouse=a             "use mouse in all modes
 set mousemodel=popup    "context menu in GVim
-set nocompatible
 set history=5000
 set showcmd             "show the command you type on bottom right
 set showmatch           "show matchin bracket
@@ -127,7 +128,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 
 " Generic Programming Support (recommended by https://coderoncode.com/tools/2017/04/16/vim-the-perfect-ide.html)
-Plugin 'vim-syntastic/syntastic'
 Plugin 'Townk/vim-autoclose'
 "
 " Markdown / Writting
@@ -287,4 +287,3 @@ let g:ale_sign_warning = '!'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight ColorColumn ctermbg=235 guibg=#fae3db
 let &colorcolumn="80,120"
-
