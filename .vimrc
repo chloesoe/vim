@@ -247,7 +247,7 @@ map <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI = 1
 let g:NERDTreeShowIgnoredStatus = 1
-if has('gui_running')
+if has('gui_running') && !&diff 
    autocmd VimEnter * NERDTree         "start NERDTree on startup
    autocmd VimEnter * wincmd p         "Jump to the main window.
    "auto change dir to the directory used in nerdtree
