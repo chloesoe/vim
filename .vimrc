@@ -236,29 +236,6 @@ fun! SetDiffColors()
 endfun
 autocmd FilterWritePre * call SetDiffColors()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Nerd Tree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeWinPos="right"
-let g:NERDTreeWinSize=50
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark 
-map <leader>nf :NERDTreeFind<cr>
-let NERDTreeShowHidden=0
-let NERDTreeMinimalUI = 1
-let g:NERDTreeShowIgnoredStatus = 1
-if has('gui_running') && !&diff 
-   autocmd VimEnter * NERDTree         "start NERDTree on startup
-   autocmd VimEnter * wincmd p         "Jump to the main window.
-   "auto change dir to the directory used in nerdtree
-   autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
-endif
-
-"no NERDTree in Scratch mode
-autocmd VimEnter * if &buftype == "nofile" && &bufhidden == "hide" && &swapfile == 0 | NERDTreeClose | endif
-"no NERDTree when commiting with git and tw to 72
-autocmd VimEnter * if &filetype == 'gitcommit' | set tw=72 | set spell | set spelllang=en_gb | NERDTreeClose | endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "indentLines settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,3 +264,27 @@ let g:ale_sign_warning = '!'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight ColorColumn ctermbg=235 guibg=#fae3db
 let &colorcolumn="80,120"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Nerd Tree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:NERDTreeWinPos="right"
+let g:NERDTreeWinSize=50
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark 
+map <leader>nf :NERDTreeFind<cr>
+let NERDTreeShowHidden=0
+let NERDTreeMinimalUI = 1
+let g:NERDTreeShowIgnoredStatus = 1
+if (has('gui_running') && !&diff && &filetype!~'puppet')
+   autocmd VimEnter * NERDTree         "start NERDTree on startup
+   autocmd VimEnter * wincmd p         "Jump to the main window.
+   "auto change dir to the directory used in nerdtree
+   autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
+endif
+
+"no NERDTree in Scratch mode
+autocmd VimEnter * if &buftype == "nofile" && &bufhidden == "hide" && &swapfile == 0 | NERDTreeClose | endif
+"no NERDTree when commiting with git and tw to 72
+autocmd VimEnter * if &filetype == 'gitcommit' | set tw=72 | set spell | set spelllang=en_gb | NERDTreeClose | endif
+
