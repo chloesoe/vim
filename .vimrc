@@ -273,6 +273,10 @@ let g:NERDTreeWinSize=50
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
+" sometimes NERDTree does open with too big width. With this map, the NERDtree
+" window is reset to 50  (first jump to split window left) and jump back to
+" split on the right
+nnoremap <leader>nr <C-W>l50<C-W>\|<C-W>h
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI = 1
 let g:NERDTreeShowIgnoredStatus = 1
