@@ -37,10 +37,11 @@ set incsearch           "incremental search
 set hlsearch            "hilight search
 set autoindent
 set smartindent
+set conceallevel=0      "make sure every char is shown (https://vi.stackexchange.com/a/7263/12055)
 set expandtab
-set textwidth=80
+set textwidth=0         "no automatic text wrapping by default
 set number
-set relativenumber
+set norelativenumber
 set numberwidth=6       "fixed width for number side pane
 set mouse=a             "use mouse in all modes
 set mousemodel=popup    "context menu in GVim
@@ -89,6 +90,14 @@ set statusline+=\ (%p%%)                    "percent position
 autocmd BufRead * setlocal foldmethod=marker
 autocmd BufRead * normal zM
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable fold by indent (https://unix.stackexchange.com/a/141104/223965)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "mapleader comma, standard is backslash and on DE-CH keyboards not easy to
@@ -107,12 +116,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'vim-latex/vim-latex'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tmhedberg/matchit'
+" Plugin 'vim-ruby/vim-ruby'
 Plugin 'freitass/todo.txt-vim'
-Plugin 'fidian/hexmode'
-Plugin 'lilydjwg/colorizer'
-Plugin 'mrtazz/simplenote.vim'
+" Plugin 'fidian/hexmode'
+" Plugin 'lilydjwg/colorizer'
+" Plugin 'mrtazz/simplenote.vim'
 Plugin 'jlanzarotta/bufexplorer'
 
 "Docker support
@@ -131,15 +139,15 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Townk/vim-autoclose'
 "
 " Markdown / Writting
-Plugin 'reedes/vim-pencil'
-Plugin 'tpope/vim-markdown'
-Plugin 'jtratner/vim-flavored-markdown'
-Plugin 'LanguageTool'
+" Plugin 'reedes/vim-pencil'
+" Plugin 'tpope/vim-markdown'
+" Plugin 'jtratner/vim-flavored-markdown'
+" Plugin 'LanguageTool'
 
 " Cloud Formation Templates AWS
-Plugin 'm-kat/aws-vim'
+" Plugin 'm-kat/aws-vim'
 
-"open a Scratch buffer:wq
+"open a Scratch buffer
 Plugin 'mtth/scratch.vim'
 
 "syntax check
@@ -167,8 +175,9 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set defaults for different file types
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au filetype            tex      set spell | set spelllang=de_ch | set shiftwidth=2 | let g:tex_defaulttargetformat = 'pdf' | ttarget pdf
-au BufRead,BufNewFile *.htm,*.html,*.css,*.php  set shiftwidth=2
+au filetype            tex           set spell | set spelllang=de_ch | set shiftwidth=2 | let g:tex_defaulttargetformat = 'pdf' | ttarget pdf
+au BufRead,BufNewFile  *.adoc        set spell | set spelllang=en
+au BufRead,BufNewFile  *.htm,*.html,*.css,*.php  set shiftwidth=2
 au BufWinEnter  bibliography.tex     set textwidth=1000 | set nowrap
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
