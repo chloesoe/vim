@@ -251,6 +251,8 @@ autocmd FilterWritePre * call SetDiffColors()
 let g:indentLine_char='·'               "use same char for vertical indent line
 let g:indentLine_leadingSpaceChar='·'
 let g:indentLine_leadingSpaceEnabled='1'
+"make sure every char is shown in md files and similar (https://vi.stackexchange.com/a/7263/12055)
+au BufRead,BufNewFile  *.md,*.txt,*.tex       let g:indentLine_conceallevel = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Simplenote settings
