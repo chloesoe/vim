@@ -290,7 +290,7 @@ map <leader>nf :NERDTreeFind<cr>
 nnoremap <leader>nr <C-W>l50<C-W>\|<C-W>h
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI = 1
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnored = 1
 if (has('gui_running') && !&diff && &filetype!~'puppet')
    autocmd VimEnter * NERDTree         "start NERDTree on startup
    autocmd VimEnter * wincmd p         "Jump to the main window.
