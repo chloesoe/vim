@@ -126,7 +126,7 @@ Plugin 'jlanzarotta/bufexplorer'
 "Docker support
 Plugin 'ekalinin/Dockerfile.vim.git'
 Plugin 'tpope/vim-dotenv'
-Plugin 'stephpy/vim-yaml'
+" Plugin 'stephpy/vim-yaml'         " not needed according to https://www.arthurkoziel.com/setting-up-vim-for-yaml/
 Plugin 'kevinhui/vim-docker-tools'
 
 "Git support
@@ -253,6 +253,11 @@ let g:indentLine_leadingSpaceChar='·'
 let g:indentLine_leadingSpaceEnabled='1'
 "make sure every char is shown in md files and similar (https://vi.stackexchange.com/a/7263/12055)
 au BufRead,BufNewFile  *.md,*.txt,*.tex       let g:indentLine_conceallevel = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YAML settings important as YAML engineer
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2 | let g:indentLine_char = '⦙'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Simplenote settings
