@@ -117,11 +117,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'vim-latex/vim-latex'
 " Plugin 'vim-ruby/vim-ruby'
-Plugin 'freitass/todo.txt-vim'
+" Plugin 'freitass/todo.txt-vim'
 " Plugin 'fidian/hexmode'
 " Plugin 'lilydjwg/colorizer'
 " Plugin 'mrtazz/simplenote.vim'
-Plugin 'jlanzarotta/bufexplorer'
+" Plugin 'jlanzarotta/bufexplorer'
 
 "Docker support
 Plugin 'ekalinin/Dockerfile.vim.git'
@@ -155,6 +155,7 @@ Plugin 'w0rp/ale'
 
 "puppet syntax/plugin
 Plugin 'rodjek/vim-puppet'
+Plugin 'bfrg/vim-jq'
 
 "Plugin to show indent spaces on starting line
 Plugin 'Yggdroot/indentLine'
@@ -232,18 +233,6 @@ if has('gui_running')
     "let g:Tex_CompileRule_pdf="mkdir -p ~/tmp/latexlog; pdflatex -interaction=nonstopmode -output-directory=/home/dhw/tmp/latexlog $*; mv /home/dhw/tmp/latexlog/*.pdf $PWD"
 endif
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" from github.com/Integralist/ProVim.git
-" Change colourscheme when diffing
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-fun! SetDiffColors()
-    highlight DiffAdd    cterm=bold ctermfg=white ctermbg=DarkGreen
-    highlight DiffDelete cterm=bold ctermfg=white ctermbg=DarkGrey
-    highlight DiffChange cterm=bold ctermfg=white ctermbg=DarkBlue
-    highlight DiffText   cterm=bold ctermfg=white ctermbg=DarkRed
-endfun
-autocmd FilterWritePre * call SetDiffColors()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "indentLines settings
