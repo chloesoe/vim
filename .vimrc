@@ -12,7 +12,8 @@ if has('gui_running')
     nmap <silent> <C-Tab> :wincmd w<CR>
     if has('unix')
         "open fullscreen on linux
-        autocmd GUIEnter * call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
+        " autocmd GUIEnter * call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
+        set lines=999 columns=999
     elseif has('win32')
         "open fullscreen on windows
         au GUIEnter * simalt ~x
@@ -61,8 +62,8 @@ set softtabstop=4
 set fileformats=unix,dos
 set printdevice=BrotherLAN
 set scrolloff=3         "show some lines at the bottom during scrolling
-"set guifont=CourierNew\ 10
-set guifont=Monospace\ Regular\ 10
+set guifont=CourierNew\ 10
+"set guifont=Monospace\ 10
 "with uppercase W save file with sudo
 command W w !sudo tee % > /dev/null
 
