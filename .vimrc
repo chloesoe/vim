@@ -134,7 +134,7 @@ Plugin 'kevinhui/vim-docker-tools'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kablamo/vim-git-log'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'   " Disabled because it prints strange chars to the text in nommal mode
 
 " Generic Programming Support (recommended by https://coderoncode.com/tools/2017/04/16/vim-the-perfect-ide.html)
 Plugin 'Townk/vim-autoclose'
