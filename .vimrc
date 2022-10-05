@@ -116,7 +116,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'vim-latex/vim-latex'
+"Plugin 'vim-latex/vim-latex'
+Plugin 'lervag/vimtex'
+Plugin 'matze/vim-tex-fold'
 " Plugin 'vim-ruby/vim-ruby'
 " Plugin 'freitass/todo.txt-vim'
 " Plugin 'fidian/hexmode'
