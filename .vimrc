@@ -62,8 +62,8 @@ set softtabstop=4
 set fileformats=unix,dos
 set printdevice=BrotherLAN
 set scrolloff=3         "show some lines at the bottom during scrolling
-set guifont=CourierNew\ 10
-"set guifont=Monospace\ 10
+"set guifont=CourierNew\ 10
+set guifont=Monospace\ Regular\ 10
 "with uppercase W save file with sudo
 command W w !sudo tee % > /dev/null
 
@@ -223,6 +223,7 @@ endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings for LaTeX
+" other settings fir vimtex om ftplugin/tex.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin on
 if has('gui_running')
