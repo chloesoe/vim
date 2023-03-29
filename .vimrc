@@ -14,6 +14,7 @@ if has('gui_running')
         "open fullscreen on linux
         " autocmd GUIEnter * call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
         " set lines=999 columns=999
+        " below command from https://stackoverflow.com/a/37226932/7311363
         autocmd VimEnter * call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
     elseif has('win32')
         "open fullscreen on windows
