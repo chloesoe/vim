@@ -90,17 +90,17 @@ set statusline+=\ (%p%%)                    "percent position
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Close all folds when opening a new buffer
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufRead * setlocal foldmethod=marker
-autocmd BufRead * normal zM
+" autocmd BufRead * setlocal foldmethod=marker
+" autocmd BufRead * normal zM
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable fold by indent (https://unix.stackexchange.com/a/141104/223965)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=2
-
+"set foldmethod=indent
+"set foldnestmax=10
+"set nofoldenable
+"set foldlevel=2
+"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "mapleader comma, standard is backslash and on DE-CH keyboards not easy to
@@ -121,6 +121,7 @@ Plugin 'scrooloose/nerdtree.git'
 "Plugin 'vim-latex/vim-latex'
 Plugin 'lervag/vimtex'
 Plugin 'matze/vim-tex-fold'
+Plugin 'habamax/vim-asciidoctor'
 " Plugin 'vim-ruby/vim-ruby'
 " Plugin 'freitass/todo.txt-vim'
 " Plugin 'fidian/hexmode'
@@ -131,14 +132,12 @@ Plugin 'matze/vim-tex-fold'
 "Docker support
 Plugin 'ekalinin/Dockerfile.vim.git'
 Plugin 'tpope/vim-dotenv'
-" Plugin 'stephpy/vim-yaml'         " not needed according to https://www.arthurkoziel.com/setting-up-vim-for-yaml/
 Plugin 'kevinhui/vim-docker-tools'
 
 "Git support
 Plugin 'tpope/vim-fugitive'
 Plugin 'kablamo/vim-git-log'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-" Plugin 'airblade/vim-gitgutter'   " Disabled because it prints strange chars to the text in nommal mode
 
 " Generic Programming Support (recommended by https://coderoncode.com/tools/2017/04/16/vim-the-perfect-ide.html)
 Plugin 'Townk/vim-autoclose'
@@ -182,7 +181,7 @@ endif
 " set defaults for different file types
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au filetype            tex           set spell | set spelllang=de_ch | set shiftwidth=2 | let g:tex_defaulttargetformat = 'pdf' | ttarget pdf
-au BufRead,BufNewFile  *.adoc        set spell | set spelllang=en
+au BufRead,BufNewFile  *.adoc        set spell | set spelllang=en | let g:asciidoctor_folding = 1 | let g:asciidoctor_fold_options = 1
 au BufRead,BufNewFile  *.htm,*.html,*.css,*.php  set shiftwidth=2
 au BufWinEnter  bibliography.tex     set textwidth=1000 | set nowrap
 
