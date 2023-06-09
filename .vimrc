@@ -118,7 +118,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree.git'
-"Plugin 'vim-latex/vim-latex'
+Plugin 'vim-latex/vim-latex'
 Plugin 'lervag/vimtex'
 Plugin 'matze/vim-tex-fold'
 Plugin 'habamax/vim-asciidoctor'
@@ -180,8 +180,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set defaults for different file types
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au filetype            tex           set spell | set spelllang=de_ch | set shiftwidth=2 | let g:tex_defaulttargetformat = 'pdf' | ttarget pdf
-au BufRead,BufNewFile  *.adoc        set spell | set spelllang=en | let g:asciidoctor_folding = 1 | let g:asciidoctor_fold_options = 1
+au filetype            tex           set spell | set spelllang=en_gb | set shiftwidth=2 | let g:tex_defaulttargetformat = 'pdf' | TTarget pdf
+au BufRead,BufNewFile  *.adoc        set spell | set spelllang=en_us | let g:asciidoctor_folding = 1 | let g:asciidoctor_fold_options = 1
 au BufRead,BufNewFile  *.htm,*.html,*.css,*.php  set shiftwidth=2
 au BufWinEnter  bibliography.tex     set textwidth=1000 | set nowrap
 
@@ -286,16 +286,17 @@ map <leader>nf :NERDTreeFind<cr>
 " sometimes NERDTree does open with too big width. With this map, the NERDtree
 " window is reset to 50  (first jump to split window left) and jump back to
 " split on the right
-nnoremap <leader>nr <C-W>l50<C-W>\|<C-W>h
+"nnoremap <leader>nr <C-W>l50<C-W>\|<C-W>h
 let NERDTreeShowHidden=0
 let NERDTreeMinimalUI = 1
 let g:NERDTreeGitStatusShowIgnored = 1
-if (has('gui_running') && !&diff && &filetype!~'puppet')
-   autocmd VimEnter * NERDTree         "start NERDTree on startup
-   autocmd VimEnter * wincmd p         "Jump to the main window.
-   "auto change dir to the directory used in nerdtree
-   autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
-endif
+" Deactivated NERDTree on 2023-06-09 because it causes a to heigh status line somtimes
+"if (has('gui_running') && !&diff && &filetype!~'puppet')
+    "start NERDTree on startup jump to the main window.
+"   autocmd VimEnter * NERDTree 
+    "auto change dir to the directory used in nerdtree
+"   autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
+"endif
 
 "no NERDTree in Scratch mode
 autocmd VimEnter * if &buftype == "nofile" && &bufhidden == "hide" && &swapfile == 0 | NERDTreeClose | endif
