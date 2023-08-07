@@ -26,3 +26,7 @@ syntax enable
 " supported backends and further explanation is provided in the documentation,
 " see ":help vimtex-compiler".
 "let g:vimtex_compiler_method = 'latexrun'
+ALEDisable
+let g:tex_nospell=1
+let g:tex_comment_nospell=1
+

@@ -23,8 +23,7 @@ if has('gui_running')
 "    set columns=180
 "    set lines=82
 else
-    "colorscheme industry
-    colorscheme elflord
+    colorscheme torte
     "map tab to switch splits in terminal mode
     nmap <silent> <Tab> :wincmd w<CR>
 endif
@@ -236,6 +235,8 @@ if has('gui_running')
                 \. "pdflatex -interaction=nonstopmode -output-directory=log $*;" 
                 \. "mv log/*.pdf ."
     "let g:Tex_CompileRule_pdf="mkdir -p ~/tmp/latexlog; pdflatex -interaction=nonstopmode -output-directory=/home/dhw/tmp/latexlog $*; mv /home/dhw/tmp/latexlog/*.pdf $PWD"
+    "LaTeX highlighting does not show ~ because it is a fixed space, we disable that below:
+    syntax match texTilde /~/ | highlight link texTilde Normal
 endif
 
 
