@@ -118,7 +118,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'vim-latex/vim-latex'
-Plugin 'lervag/vimtex'
+"Plugin 'lervag/vimtex'     ---> was not able to make it running properly, interfers with vim-latex, so disable
 Plugin 'matze/vim-tex-fold'
 Plugin 'habamax/vim-asciidoctor'
 " Plugin 'vim-ruby/vim-ruby'
@@ -179,7 +179,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set defaults for different file types
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au filetype            tex           set spell | set spelllang=en_gb | set shiftwidth=2 | let g:tex_defaulttargetformat = 'pdf' | TTarget pdf
+"moved to ftplugin/tex.vim
 au BufRead,BufNewFile  *.adoc        set spell | set spelllang=en_us | let g:asciidoctor_folding = 1 | let g:asciidoctor_fold_options = 1
 au BufRead,BufNewFile  *.htm,*.html,*.css,*.php  set shiftwidth=2
 au BufWinEnter  bibliography.tex     set textwidth=1000 | set nowrap
@@ -223,22 +223,11 @@ endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings for LaTeX
-" other settings fir vimtex om ftplugin/tex.vim
+" other settings for vimtex on ftplugin/tex.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype plugin on
-if has('gui_running')
-    set grepprg=grep\ -nH\ $*
-    filetype indent on
-    let g:tex_flavor='latex'
-    "logs output to log file: http://tex.stackexchange.com/questions/341243/vimlatex-compilation-output-in-sub-folder-and-quickfix-window
-    let g:Tex_CompileRule_pdf="mkdir -p log;"
-                \. "pdflatex -interaction=nonstopmode -output-directory=log $*;" 
-                \. "mv log/*.pdf ."
-    "let g:Tex_CompileRule_pdf="mkdir -p ~/tmp/latexlog; pdflatex -interaction=nonstopmode -output-directory=/home/dhw/tmp/latexlog $*; mv /home/dhw/tmp/latexlog/*.pdf $PWD"
-    "LaTeX highlighting does not show ~ because it is a fixed space, we disable that below:
-    syntax match texTilde /~/ | highlight link texTilde Normal
-endif
-
+" all moved to ftplugin/tex.vim
+"au BufRead,BufNewFile  *.tex       TTarget pdf
+au filetype            tex         TTarget pdf
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "indentLines settings
