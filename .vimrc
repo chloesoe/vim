@@ -146,6 +146,7 @@ Plugin 'Townk/vim-autoclose'
 " Plugin 'tpope/vim-markdown'
 " Plugin 'jtratner/vim-flavored-markdown'
 " Plugin 'LanguageTool'
+Plugin 'rhysd/vim-grammarous'         " LanguageTool, use version 5.9 https://languagetool.org/download/ because command uses deprecated --api
 
 " Cloud Formation Templates AWS
 " Plugin 'm-kat/aws-vim'
@@ -200,6 +201,9 @@ map <F9> z=
 "accept suggestion with Shift-F9
 map <S-F9> z=
 
+" LanguageTool
+" fix from https://github.com/rhysd/vim-grammarous/issues/110
+let g:grammarous#jar_url = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LaTeX count words and chars in a range
