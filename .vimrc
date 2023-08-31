@@ -204,6 +204,7 @@ map <S-F9> z=
 " LanguageTool
 " fix from https://github.com/rhysd/vim-grammarous/issues/110
 let g:grammarous#jar_url = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
+let g:grammarous#use_vim_spelllang = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LaTeX count words and chars in a range
