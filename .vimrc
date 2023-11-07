@@ -66,7 +66,7 @@ set scrolloff=3         "show some lines at the bottom during scrolling
 "set guifont=CourierNew\ 10
 set guifont=Monospace\ Regular\ 10
 "with uppercase W save file with sudo
-command W w !sudo tee % > /dev/null
+"command W w !sudo tee % > /dev/null
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
@@ -242,6 +242,9 @@ let g:indentLine_leadingSpaceChar='·'
 let g:indentLine_leadingSpaceEnabled='1'
 "make sure every char is shown in md files and similar (https://vi.stackexchange.com/a/7263/12055)
 au BufRead,BufNewFile  *.md,*.txt,*.tex       let g:indentLine_conceallevel = 0
+# https://github.com/Yggdroot/indentLine#customization
+let g:markdown_syntax_conceal=0
+let g:vim_json_conceal=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YAML settings important as YAML engineer
