@@ -242,7 +242,7 @@ let g:indentLine_leadingSpaceChar='·'
 let g:indentLine_leadingSpaceEnabled='1'
 "make sure every char is shown in md files and similar (https://vi.stackexchange.com/a/7263/12055)
 au BufRead,BufNewFile  *.md,*.txt,*.tex       let g:indentLine_conceallevel = 0
-# https://github.com/Yggdroot/indentLine#customization
+" https://github.com/Yggdroot/indentLine#customization
 let g:markdown_syntax_conceal=0
 let g:vim_json_conceal=0
 
