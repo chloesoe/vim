@@ -15,8 +15,8 @@ let g:tex_defaulttargetformat = 'pdf'
 
 let g:tex_flavor='latex'
 let g:Tex_CompileRule_pdf="mkdir -p log;"
-    \. "pdflatex -interaction=nonstopmode -output-directory=log $*;"
+    \. "pdflatex -file-line-error -interaction=nonstopmode -output-directory=log $*;"
     \. "bibtex log/%:r;"
     \. "makeindex log/%:r.idx;"
-    \. "pdflatex -interaction=nonstopmode -output-directory=log $*;"
+    \. "pdflatex -file-line-error -interaction=nonstopmode -output-directory=log $*;"
     \. "mv log/*.pdf ."
