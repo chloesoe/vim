@@ -127,6 +127,7 @@ Plugin 'habamax/vim-asciidoctor'
 " Plugin 'lilydjwg/colorizer'
 " Plugin 'mrtazz/simplenote.vim'
 " Plugin 'jlanzarotta/bufexplorer'
+Plugin 'godlygeek/tabular'            "Tabularize plugin
 
 "Docker support
 Plugin 'ekalinin/Dockerfile.vim.git'
@@ -250,6 +251,11 @@ let g:vim_json_conceal=0
 " YAML settings important as YAML engineer
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2 | let g:indentLine_char = '⦙'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Python settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 | let g:indentLine_char = '⦙' | let g:ale_python_pylint_options = '--rcfile=$HOME/.pylintrc' | set foldmethod=indent
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Simplenote settings
