@@ -9,7 +9,6 @@ ALEDisable
 let g:tex_comment_nospell = 1
 
 set spell
-syntax spell toplevel
 set spelllang=en_gb
 set shiftwidth=2
 let g:tex_defaulttargetformat = 'pdf'
@@ -21,3 +20,4 @@ let g:Tex_CompileRule_pdf="mkdir -p log;"
     \. "makeindex log/%:r.idx;"
     \. "pdflatex -file-line-error -interaction=nonstopmode -output-directory=log $*;"
     \. "mv log/*.pdf ."
+syntax spell toplevel
