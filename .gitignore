@@ -2,4 +2,3 @@ bundle/*
 !bundle/Vundle.vim
 spell/*.spl
 .netrwhist
-temp/vim_undo_20220330_nvim/
