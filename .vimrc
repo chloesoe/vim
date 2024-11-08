@@ -128,6 +128,9 @@ Plugin 'habamax/vim-asciidoctor'
 " Plugin 'mrtazz/simplenote.vim'
 " Plugin 'jlanzarotta/bufexplorer'
 Plugin 'godlygeek/tabular'            "Tabularize plugin
+" autocomplete:
+" Plugin 'ycm-core/YouCompleteMe'
+Plugin 'girishji/vimcomplete'
 
 "Docker support
 Plugin 'ekalinin/Dockerfile.vim.git'
