@@ -181,6 +181,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set defaults for different file types
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType plaintex setlocal filetype=tex     " plaintex should be handled same as tex
 "moved to ftplugin/tex.vim
 au BufRead,BufNewFile  *.adoc,*.md        set spell | set spelllang=en_us | let g:asciidoctor_folding = 1 | let g:asciidoctor_fold_options = 1
 au BufRead,BufNewFile  *.htm,*.html,*.css,*.php  set shiftwidth=2
