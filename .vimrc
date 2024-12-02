@@ -264,8 +264,8 @@ autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 | let g:in
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Simplenote settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source ~/.simplenote/credentials.vim
-let g:SimplenoteVertical=1
+"source ~/.simplenote/credentials.vim
+"let g:SimplenoteVertical=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ale settings from @indero for Asynchronous Lint Engine
