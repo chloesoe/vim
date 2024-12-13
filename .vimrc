@@ -67,6 +67,11 @@ set scrolloff=3         "show some lines at the bottom during scrolling
 set guifont=Monospace\ Regular\ 10
 "with uppercase W save file with sudo
 "command W w !sudo tee % > /dev/null
+"
+" Moving the cursor through long soft-wrapped lines
+" https://stackoverflow.com/q/20975928/7311363
+noremap j gj
+noremap k gk
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
