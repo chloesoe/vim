@@ -134,8 +134,8 @@ Plugin 'habamax/vim-asciidoctor'
 " Plugin 'jlanzarotta/bufexplorer'
 Plugin 'godlygeek/tabular'            "Tabularize plugin
 " autocomplete:
-" Plugin 'ycm-core/YouCompleteMe'
-Plugin 'girishji/vimcomplete'
+Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'girishji/vimcomplete'
 
 "Docker support
 Plugin 'ekalinin/Dockerfile.vim.git'
